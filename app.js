@@ -1,12 +1,33 @@
-const http = require('http');
+const express = require('express');
+const app = express();
+
+app.use(express.static('./public'));
+app.use(express.json());
+
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
 const port = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+  res.sendFile('/index.html');
+});
 
-http
-  .createServer(function (request, response) {
-    response.writeHead(200, { 'Content-Type': 'text/plain' });
-    response.end('Hello, World!\n');
-  })
-  .listen(port);
+app.listen(port, () => {
+  console.log('Listening on port ' + port);
+});
 
-console.log(`App is running... (port: ${port})`);
+// const http = require('http');
+
+// const port = process.env.PORT || 3000;
+
+// http
+//   .createServer(function (request, response) {
+//     response.writeHead(200, { 'Content-Type': 'text/plain' });
+//     response.end('Hello, World!\n');
+//   })
+//   .listen(port);
+
+// console.log(`App is running... (port: ${port})`);
