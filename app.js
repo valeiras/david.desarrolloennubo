@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-app.use(express.static('./public'));
 app.use(express.json());
 
 app.use(
@@ -13,7 +12,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
-  res.sendFile('/index.html');
+  res.sendFile(__dirname + '/public/not-an-index.html');
 });
 
 app.listen(port, () => {
