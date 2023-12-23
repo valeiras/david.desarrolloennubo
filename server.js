@@ -1,4 +1,4 @@
-const app = require('./app');
-const http = require('http');
+import app from './app.js';
+import { createServer } from 'http';
 
-http.createServer(app).listen(process.env.PORT);
+createServer(app).listen(process.env.PORT);
