@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
+    "setup-production-app": "/opt/plesk/node/6/bin/npm i && cd client && /opt/plesk/node/6/bin/npm i && /opt/plesk/node/6/bin/npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

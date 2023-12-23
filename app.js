@@ -12,7 +12,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/not-an-index.html');
+  res.send('<h1>A node app</h1>');
 });
 
 app.listen(port, () => {
