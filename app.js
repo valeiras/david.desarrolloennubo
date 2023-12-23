@@ -12,7 +12,7 @@ app.use(
 
 const port = process.env.PORT || 3000;
 app.get('/', (req, res) => {
-  res.send('<h1>A node app</h1>');
+  res.sendFile('<h1>A node app</h1>');
 });
 
 app.listen(port, () => {
